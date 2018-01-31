@@ -56,7 +56,7 @@ class Blockchain(object):
     @property
     def last_block(self):
         # Returns the last Block in the chain
-        self.chain[-1]
+        return self.chain[-1]
     
     @staticmethod
     def hash(block):
@@ -134,6 +134,7 @@ def mine():
         'previous_hash': block['previous_hash'],
     }
     return jsonify(response), 200
+
 
 @app.route('/transactions/new', methods=['POST'])
 def new_transaction():
